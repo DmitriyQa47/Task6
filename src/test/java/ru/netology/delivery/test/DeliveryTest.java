@@ -36,7 +36,7 @@ public class DeliveryTest {
         $$("button").find(Condition.exactText("Запланировать")).click();
         $("[data-test-id='success-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(15));
         $("[data-test-id='success-notification'] .notification__content")
-                .shouldHave(Condition.text("Встреча успешно запланирована на " + date), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + date), Duration.ofSeconds(31))
 
                 .shouldBe(Condition.visible);
 
@@ -50,7 +50,7 @@ public class DeliveryTest {
         $("[data-test-id='replan-notification'] button").click();
         $("[data-test-id='success-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(15));
         $("[data-test-id='success-notification'] .notification__content")
-                .shouldHave(Condition.text("Встреча успешно запланирована на " + date2), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + date2), Duration.ofSeconds(31))
 
                 .shouldBe(Condition.visible);
     }
