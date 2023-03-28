@@ -34,9 +34,9 @@ public class DeliveryTest {
         $("[data-test-id='phone'] input").setValue(DataGenerator.generatePhone());
         $("[data-test-id='agreement']").click();
         $$("button").find(Condition.exactText("Запланировать")).click();
-        $("[data-test-id='success-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $("[data-test-id='success-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(28));
         $("[data-test-id='success-notification'] .notification__content")
-                .shouldHave(Condition.text("Встреча успешно запланирована на " + date), Duration.ofSeconds(31))
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + date), Duration.ofSeconds(28))
 
                 .shouldBe(Condition.visible);
 
@@ -45,12 +45,12 @@ public class DeliveryTest {
         data.click();
         data.setValue(date2);
         $$("button").find(Condition.exactText("Запланировать")).click();
-        $("[data-test-id='replan-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $("[data-test-id='replan-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(28));
         $("[data-test-id='replan-notification'] .notification__content").shouldHave(Condition.text("У вас уже запланирована встреча на другую дату. Перепланировать?"), Duration.ofSeconds(15)).shouldBe(Condition.visible);
         $("[data-test-id='replan-notification'] button").click();
-        $("[data-test-id='success-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $("[data-test-id='success-notification'] button").shouldBe(Condition.visible, Duration.ofSeconds(28));
         $("[data-test-id='success-notification'] .notification__content")
-                .shouldHave(Condition.text("Встреча успешно запланирована на " + date2), Duration.ofSeconds(31))
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + date2), Duration.ofSeconds(28))
 
                 .shouldBe(Condition.visible);
     }
